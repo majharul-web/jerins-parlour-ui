@@ -1,0 +1,12 @@
+.google-button {
+  padding: 7px 30px;
+  border-radius: 10px;
+  border: 1px solid #f63e7b;
+  font-size: 17px;
+  background-color: transparent;
+  cursor: pointer;
+}
+.google-button:hover {
+  background-color: #f63e7b;
+  color: white;
+}
