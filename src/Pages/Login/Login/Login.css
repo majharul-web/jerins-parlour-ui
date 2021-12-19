@@ -10,3 +10,13 @@
   background-color: #f63e7b;
   color: white;
 }
+
+.form-login {
+  width: 40%;
+}
+
+@media only screen and (max-width: 768px) {
+  .form-login {
+    width: 80%;
+  }
+}

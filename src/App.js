@@ -30,7 +30,6 @@ function App() {
               <Route path={`/dashboard/payment`} element={<Payment />}></Route>
               <Route path={`/dashboard/review`} element={<Review />}></Route>
               <Route path={`/dashboard/myOrder`} element={<MyOrder />}></Route>
-              <Route path={`/dashboard/payment`} element={<Payment />}></Route>
               <Route path={`/dashboard/makeAdmin`} element={<MakeAdmin />}></Route>
               <Route path={`/dashboard/addService`} element={<AddService />}></Route>
             </Route>

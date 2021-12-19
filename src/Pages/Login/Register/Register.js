@@ -37,7 +37,7 @@ const Register = () => {
                     <div style={{ margin: '0 auto' }}>
                         <h3 style={{ textAlign: 'center', fontSize: '30px' }}>Register</h3>
                         <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                            <Box sx={{ border: '1px solid gray', borderRadius: '5px', width: '40%', padding: '20px 30px' }}>
+                            <Box className='form-login' sx={{ border: '1px solid gray', borderRadius: '5px', padding: '20px 30px' }}>
                                 <form onSubmit={handleRegisterSubmit} >
                                     <TextField
                                         type="text"
