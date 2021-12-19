@@ -2,7 +2,6 @@ import { Card, CardContent, CardMedia, Grid, Rating, Typography } from '@mui/mat
 import React from 'react';
 
 const Testimonial = ({ review }) => {
-    console.log(review)
     const { name, image, rating, description, designation } = review;
     return (
         <Grid item xs={4} sm={4} md={4} sx={{ marginBottom: '40px' }}>

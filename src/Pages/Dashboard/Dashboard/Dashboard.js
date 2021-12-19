@@ -36,8 +36,11 @@ const Dashboard = (props) => {
             <List sx={{ marginLeft: '20px' }}>
                 <Link to={`/dashboard/myOrder`}> <Button >My Order</Button> </Link> <br />
                 <Link to={`/dashboard/review`}> <Button >Review</Button> </Link> <br />
+                <Link to={`/dashboard/manageOrders`}> <Button >Manage Orders</Button> </Link> <br />
+                <Link to={`/dashboard/manageProducts`}> <Button >Manage Products</Button> </Link> <br />
                 <Link to={`/dashboard/makeAdmin`}> <Button >Make Admin</Button> </Link> <br />
                 <Link to={`/dashboard/addService`}> <Button >Add Service</Button> </Link> <br />
+                <Link to='/'> <Button >Home</Button> </Link> <br />
                 <Button onClick={logOut} variant="contained">LogOut</Button>
             </List>
         </div>

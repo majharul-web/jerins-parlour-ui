@@ -8,6 +8,8 @@ import AddService from './Pages/Dashboard/AddService/AddService';
 import Dashboard from './Pages/Dashboard/Dashboard/Dashboard';
 import DefaultDashboard from './Pages/Dashboard/Dashboard/DefaultDashboard';
 import MakeAdmin from './Pages/Dashboard/MakeAdmin/MakeAdmin';
+import ManageOrders from './Pages/Dashboard/ManageOrders/ManageOrders';
+import ManageProducts from './Pages/Dashboard/ManageProducts/ManageProducts';
 import MyOrder from './Pages/Dashboard/MyOrder/MyOrder';
 import Review from './Pages/Dashboard/Review/Review';
 import Home from './Pages/Home/Home/Home';
@@ -34,6 +36,8 @@ function App() {
               <Route path={`/dashboard/myOrder`} element={<MyOrder />}></Route>
               <Route path={`/dashboard/makeAdmin`} element={<MakeAdmin />}></Route>
               <Route path={`/dashboard/addService`} element={<AddService />}></Route>
+              <Route path={`/dashboard/manageOrders`} element={<ManageOrders />}></Route>
+              <Route path={`/dashboard/manageProducts`} element={<ManageProducts />}></Route>
             </Route>
 
             <Route path='/login' element={<Login />}></Route>

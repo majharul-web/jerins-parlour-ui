@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const Service = ({ service }) => {
     const { name, price, image, description, _id } = service;
-    console.log(service)
+
     return (
         <Grid item xs={4} sm={4} md={4} sx={{ marginBottom: '40px' }}>
             <Card sx={{ minWidth: 275, border: 0, boxShadow: 3 }}>
