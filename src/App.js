@@ -3,7 +3,6 @@ import { Payment } from '@mui/icons-material';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './App.css';
 import AuthProvider from './context/AuthProvider';
-import About from './Pages/About/About';
 import AllServices from './Pages/AllServices/AllServices';
 import AddService from './Pages/Dashboard/AddService/AddService';
 import Dashboard from './Pages/Dashboard/Dashboard/Dashboard';
@@ -15,6 +14,7 @@ import Home from './Pages/Home/Home/Home';
 import Login from './Pages/Login/Login/Login';
 import PrivateRoute from './Pages/Login/PrivateRoute/PrivateRoute';
 import Register from './Pages/Login/Register/Register';
+import Orders from './Pages/Orders/Orders';
 
 function App() {
   return (
@@ -25,6 +25,7 @@ function App() {
             <Route exact path='/' element={<Home />}></Route>
             <Route path='/home' element={<Home />}></Route>
             <Route path='/allServices' element={<AllServices />}></Route>
+            <Route path={`/Order/:orderId`} element={<PrivateRoute><Orders /></PrivateRoute>}></Route>
 
             <Route path="/dashboard" element={<PrivateRoute><Dashboard /></PrivateRoute>}>
               <Route exact path='/dashboard' element={<DefaultDashboard />}></Route >

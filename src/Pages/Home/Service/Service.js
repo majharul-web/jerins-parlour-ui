@@ -1,8 +1,9 @@
 import { Button, Card, CardContent, CardMedia, Grid, Typography } from '@mui/material';
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Service = ({ service }) => {
-    const { name, price, image, description } = service;
+    const { name, price, image, description, _id } = service;
     console.log(service)
     return (
         <Grid item xs={4} sm={4} md={4} sx={{ marginBottom: '40px' }}>
@@ -14,10 +15,10 @@ const Service = ({ service }) => {
                     alt="Paella dish"
                 />
                 <CardContent>
-                    <Typography sx={{ textAlign: 'center' }} gutterBottom>
+                    <Typography sx={{ textAlign: 'center', fontWeight: 'bold' }} gutterBottom>
                         {name}
                     </Typography>
-                    <Typography sx={{ fontSize: 16, textAlign: 'center', color: '#F63E7B' }} gutterBottom>
+                    <Typography sx={{ fontSize: 16, textAlign: 'center', color: '#F63E7B', fontWeight: 'bold' }} gutterBottom>
                         $ {price}
                     </Typography>
 
@@ -25,7 +26,10 @@ const Service = ({ service }) => {
                         {description}
                     </Typography>
                     <div style={{ textAlign: 'center' }}>
-                        <Button variant="outlined" sx={{ backgroundColor: "#F63E7B", color: 'black' }}>Book Now</Button>
+                        <Link to={`/Order/${_id}`} style={{ textDecoration: 'none' }}>
+                            <Button variant="outlined" sx={{ backgroundColor: "#F63E7B", color: 'black' }}>Book Now</Button>
+                        </Link>
+
                     </div>
 
                 </CardContent>
