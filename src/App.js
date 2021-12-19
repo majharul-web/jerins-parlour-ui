@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './App.css';
 import AuthProvider from './context/AuthProvider';
 import About from './Pages/About/About';
+import AllServices from './Pages/AllServices/AllServices';
 import AddService from './Pages/Dashboard/AddService/AddService';
 import Dashboard from './Pages/Dashboard/Dashboard/Dashboard';
 import DefaultDashboard from './Pages/Dashboard/Dashboard/DefaultDashboard';
@@ -23,7 +24,7 @@ function App() {
           <Routes>
             <Route exact path='/' element={<Home />}></Route>
             <Route path='/home' element={<Home />}></Route>
-            <Route path='/about' element={<PrivateRoute><About /></PrivateRoute>}></Route>
+            <Route path='/allServices' element={<AllServices />}></Route>
 
             <Route path="/dashboard" element={<PrivateRoute><Dashboard /></PrivateRoute>}>
               <Route exact path='/dashboard' element={<DefaultDashboard />}></Route >

@@ -124,8 +124,8 @@ const Navigation = () => {
                             <Link className={navItem} to='/home'>
                                 <Button color="inherit">Home</Button>
                             </Link>
-                            <Link className={navItem} to='/about'>
-                                <Button color="inherit">About</Button>
+                            <Link className={navItem} to='/allServices'>
+                                <Button color="inherit">ALL Services</Button>
                             </Link>
                             {
                                 user.email &&

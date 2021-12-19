@@ -1,5 +1,6 @@
-import { Button, Container, Grid, Typography } from '@mui/material';
+import { Button, Container, Grid } from '@mui/material';
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Banner = () => {
     return (
@@ -10,9 +11,12 @@ const Banner = () => {
                         <div>
                             <h1 style={{ fontWight: 'bold', fontSize: '3em' }}>BEAUTY SALON FOR <br /> EVERY WOMEN</h1>
                             <p style={{ paddingRight: '10rem' }}>A beauty salon or beauty parlor is an establishment dealing with cosmetic treatments for men and women</p>
-                            <Button variant="contained" style={{ backgroundColor: '#F63E7B', marginTop: '10px' }}>
-                                Get Appointment
-                            </Button>
+
+                            <Link to='/allServices' style={{ textDecoration: 'none' }}>
+                                <Button variant="contained" style={{ backgroundColor: '#F63E7B', marginTop: '10px' }}>
+                                    Get Appointment
+                                </Button>
+                            </Link>
                         </div>
 
                     </Grid>
