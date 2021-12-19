@@ -19,7 +19,7 @@ const AddService = () => {
     // send data backend
     const handleServiceSubmit = (e) => {
         e.preventDefault();
-        axios.post('http://localhost:5000/addService', newServiceData)
+        axios.post('https://murmuring-fjord-04131.herokuapp.com/addService', newServiceData)
             .then(res => {
                 const success = res.data.insertedId;
                 console.log(success)

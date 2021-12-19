@@ -7,7 +7,7 @@ const ManageProducts = () => {
 
     // get data from database
     useEffect(() => {
-        fetch('http://localhost:5000/manageService')
+        fetch('https://murmuring-fjord-04131.herokuapp.com/manageService')
             .then(res => res.json())
             .then(data => setServices(data));
     }, [isDeleted]);
@@ -16,7 +16,7 @@ const ManageProducts = () => {
     const handleDelete = (id) => {
         const proceed = window.confirm('Are you sure to Delete');
         if (proceed) {
-            fetch(`http://localhost:5000/alService/service/delete/${id}`, {
+            fetch(`https://murmuring-fjord-04131.herokuapp.com/alService/service/delete/${id}`, {
                 method: 'DELETE'
             })
                 .then(res => res.json())

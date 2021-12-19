@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
 import logo from '../../../images/Group 33092.png';
-import google from '../../../images/Icon/google.png'
+
 
 const Register = () => {
     const [registerData, setRegisterData] = useState({});

@@ -1,4 +1,4 @@
-import { Alert, Button, Card, CardContent, CardMedia, Container, Grid, Link, TextField, Typography } from '@mui/material';
+import { Alert, Button, Card, CardContent, CardMedia, Container, Grid, TextField, Typography } from '@mui/material';
 import { Box } from '@mui/system';
 import axios from 'axios';
 import React from 'react';
@@ -19,7 +19,7 @@ const Order = ({ id }) => {
 
     // get data from database
     useEffect(() => {
-        fetch('http://localhost:5000/service')
+        fetch('https://murmuring-fjord-04131.herokuapp.com/service')
             .then(res => res.json())
             .then(data => setServices(data));
     }, []);
@@ -52,7 +52,7 @@ const Order = ({ id }) => {
         newServiceData.serviceName = name;
         newServiceData.status = 'pending';
 
-        axios.post('http://localhost:5000/addOrder', newServiceData)
+        axios.post('https://murmuring-fjord-04131.herokuapp.com/addOrder', newServiceData)
             .then(res => {
                 const success = res.data.insertedId;
                 if (success) {

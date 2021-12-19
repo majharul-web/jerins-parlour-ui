@@ -1,5 +1,4 @@
 
-import { Payment } from '@mui/icons-material';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './App.css';
 import AuthProvider from './context/AuthProvider';
@@ -13,6 +12,7 @@ import ManageProducts from './Pages/Dashboard/ManageProducts/ManageProducts';
 import MyOrder from './Pages/Dashboard/MyOrder/MyOrder';
 import Review from './Pages/Dashboard/Review/Review';
 import Home from './Pages/Home/Home/Home';
+import AdminRoute from './Pages/Login/AdminRoute/AdminRoute';
 import Login from './Pages/Login/Login/Login';
 import PrivateRoute from './Pages/Login/PrivateRoute/PrivateRoute';
 import Register from './Pages/Login/Register/Register';
@@ -31,13 +31,13 @@ function App() {
 
             <Route path="/dashboard" element={<PrivateRoute><Dashboard /></PrivateRoute>}>
               <Route exact path='/dashboard' element={<DefaultDashboard />}></Route >
-              <Route path={`/dashboard/payment`} element={<Payment />}></Route>
               <Route path={`/dashboard/review`} element={<Review />}></Route>
               <Route path={`/dashboard/myOrder`} element={<MyOrder />}></Route>
-              <Route path={`/dashboard/makeAdmin`} element={<MakeAdmin />}></Route>
-              <Route path={`/dashboard/addService`} element={<AddService />}></Route>
-              <Route path={`/dashboard/manageOrders`} element={<ManageOrders />}></Route>
-              <Route path={`/dashboard/manageProducts`} element={<ManageProducts />}></Route>
+
+              <Route path={`/dashboard/makeAdmin`} element={<AdminRoute><MakeAdmin /></AdminRoute>}></Route>
+              <Route path={`/dashboard/addService`} element={<AdminRoute><AddService /></AdminRoute>}></Route>
+              <Route path={`/dashboard/manageOrders`} element={<AdminRoute><ManageOrders /></AdminRoute>}></Route>
+              <Route path={`/dashboard/manageProducts`} element={<AdminRoute><ManageProducts /></AdminRoute>}></Route>
             </Route>
 
             <Route path='/login' element={<Login />}></Route>

@@ -8,7 +8,7 @@ const Services = () => {
 
     // get data from database
     useEffect(() => {
-        fetch('http://localhost:5000/service')
+        fetch('https://murmuring-fjord-04131.herokuapp.com/service')
             .then(res => res.json())
             .then(data => setServices(data));
     }, []);

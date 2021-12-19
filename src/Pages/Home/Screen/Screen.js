@@ -1,4 +1,4 @@
-import { Button, Container, Grid } from '@mui/material';
+import { Container, Grid } from '@mui/material';
 import React from 'react';
 
 const Screen = () => {

@@ -19,7 +19,7 @@ const Review = () => {
     // send data backend
     const handleReviewSubmit = (e) => {
         e.preventDefault();
-        axios.post('http://localhost:5000/addReview', newReviewData)
+        axios.post('https://murmuring-fjord-04131.herokuapp.com/addReview', newReviewData)
             .then(res => {
                 const success = res.data.insertedId;
 

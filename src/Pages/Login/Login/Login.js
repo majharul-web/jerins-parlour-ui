@@ -2,7 +2,7 @@ import { Alert, Box, Button, CircularProgress, TextField } from '@mui/material';
 import React, { useState } from 'react';
 import logo from '../../../images/Group 33092.png';
 import google from '../../../images/Icon/google.png'
-import { Link, NavLink, useLocation, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
 import './Login.css'
 
@@ -20,7 +20,6 @@ const Login = () => {
         newLoginData[field] = value;
         setLoginData(newLoginData)
     }
-    console.log(loginData)
 
     const handleLoginSubmit = e => {
         loginWithEmailPass(loginData.email, loginData.password, location, navigate)
@@ -71,7 +70,7 @@ const Login = () => {
                                             variant='contained'
                                             sx={{ my: 1 }}
                                             type="submit">
-                                            Register
+                                            Login
                                         </Button>
                                     </form>
                                     <br />

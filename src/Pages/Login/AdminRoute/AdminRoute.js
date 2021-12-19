@@ -6,10 +6,18 @@ import useAuth from '../../../hooks/useAuth';
 const AdminRoute = ({ children, ...rest }) => {
     const { user, isLoading } = useAuth();
     let location = useLocation();
-    if (isLoading) {
-        return <div style={{ textAlign: 'center' }}> <CircularProgress color="success" /></div>
 
+    if (isLoading) {
+        return <div style={{ textAlign: 'center' }}>
+            <CircularProgress color="success" />
+        </div>
     }
+    // if (!admin) {
+    //     return <div style={{ textAlign: 'center' }}>
+    //         <CircularProgress color="success" />
+    //     </div>
+    // }
+
     if (user.email) {
         return children;
     }

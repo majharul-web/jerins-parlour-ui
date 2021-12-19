@@ -1,6 +1,7 @@
-import { createUserWithEmailAndPassword, getAuth, GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
+import { createUserWithEmailAndPassword, getAuth, GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
 import { useEffect, useState } from "react";
 import initializeAuthentication from "../Pages/Login/Firebase/initializeAuthentication";
+
 initializeAuthentication();
 
 const useFirebase = () => {
@@ -8,7 +9,10 @@ const useFirebase = () => {
     const [user, setUser] = useState({});
     const [authError, setAuthError] = useState('');
     const [isLoading, setIsLoading] = useState(true);
+    const [admin, setAdmin] = useState(false);
+
     const auth = getAuth();
+
     // google singIn
     const singInUsingGoogle = (location, navigate) => {
         setIsLoading(true);
@@ -21,7 +25,8 @@ const useFirebase = () => {
                 setAuthError('');
 
                 // save user info into database
-                // userInfoSaveDB(user.email, user.displayName, "PUT")
+                userInfoSaveDB(user.email, user.displayName, "PUT")
+
             }).catch((error) => {
                 setAuthError(error.message);
             })
@@ -38,15 +43,15 @@ const useFirebase = () => {
                 const newUser = { email, displayName: name }
                 setUser(newUser)
 
-                // // save user info into database
-                // userInfoSaveDB(email, name, "POST")
+                // save user info into database
+                userInfoSaveDB(email, name, "POST")
 
-                // // update userName
-                // updateProfile(auth.currentUser, {
-                //     displayName: name
-                // }).then(() => {
-                // }).catch((error) => {
-                // });
+                // update userName
+                updateProfile(auth.currentUser, {
+                    displayName: name
+                }).then(() => {
+                }).catch((error) => {
+                });
 
                 navigate('/');
             })
@@ -94,7 +99,29 @@ const useFirebase = () => {
             setIsLoading(false);
         });
         return () => unsubscribed;
-    }, []);
+    }, [auth]);
+
+    // save user info into database
+    const userInfoSaveDB = (email, displayName, method) => {
+        const user = { email, displayName }
+        fetch('https://murmuring-fjord-04131.herokuapp.com/users', {
+            method: method,
+            headers: {
+                'content-type': 'application/json'
+            }
+            ,
+            body: JSON.stringify(user)
+        })
+            .then()
+
+    }
+
+    // get admin
+    useEffect(() => {
+        fetch(`https://murmuring-fjord-04131.herokuapp.com/users/${user.email}`)
+            .then(res => res.json())
+            .then(data => setAdmin(data.admin))
+    }, [user?.email])
 
 
     return {
@@ -105,7 +132,8 @@ const useFirebase = () => {
         authError,
         userRegister,
         loginWithEmailPass,
-        isLoading
+        isLoading,
+        admin
 
     }
 };
