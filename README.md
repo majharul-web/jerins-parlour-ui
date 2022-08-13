@@ -12,6 +12,5 @@ Visit MY Website: [Jerins Parlour](https://jerins-parlour-4d0a5.web.app/).
 - Admin can Add/Manage Service,Manage Orders & make another Admin.
 - I make this website using HTML,CSS,Material-UI,FontAwesome,Javascript and React for FrontEnd.
 - NodeJs,Express and Mongodb Database Using BackEnd.
-- Use React Router v6.
 - Apply Private Route in service details page.
 - Client Side hosted in Firebase and Server Side Hosted In Heroku.
